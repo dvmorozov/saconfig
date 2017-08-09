@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tGeneralEquipment>
+
+@{
+    ViewBag.Title = "GeneralEquipment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GeneralEquipment</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            type
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            Substation
+        </th>
+        <th>
+            VoltageLevel
+        </th>
+        <th>
+            Bay
+        </th>
+        <th>
+            Function
+        </th>
+        <th>
+            SubFunction
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tGeneralEquipmentEnum.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_GeneralEquipmentOwnerType.GeneralEquipmentOwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tSubstation.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tVoltageLevel.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tBay.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tFunction.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tSubFunction.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

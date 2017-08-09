@@ -1,0 +1,67 @@
+﻿@model SAConfig.Models.saconfig_SCL
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("Text", "TextCreateEdit", new { id = Model.ID }) |
+    @Html.ActionLink("Header", "HeaderList", new { id = Model.ID }) |
+    @Html.ActionLink("Substation", "SubstationList", new { id = Model.ID }) |
+    @Html.ActionLink("Communication", "CommunicationList", new { id = Model.ID }) |
+    @Html.ActionLink("IED", "IEDList", new { id = Model.ID }) |
+    @Html.ActionLink("DataTypeTemplates", "DataTypeTemplatesList", new { id = Model.ID })
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SCL Attributes</legend>
+
+        @Html.Hidden("backEditUrl", (String)ViewBag.BackEditUrl)
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="display-label">Text</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.saconfig_tText.value)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.version)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.version)
+            @Html.ValidationMessageFor(model => model.version)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.revision)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.revision)
+            @Html.ValidationMessageFor(model => model.revision)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Project, "Project")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Project", String.Empty)
+            @Html.ValidationMessageFor(model => model.Project)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

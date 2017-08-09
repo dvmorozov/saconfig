@@ -1,0 +1,152 @@
+﻿@model SAConfig.Models.saconfig_tLogControl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("TrgOps", "Index", "TrgOps")
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>LogControl Attributes</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.datSet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.datSet)
+            @Html.ValidationMessageFor(model => model.datSet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.intgPd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.intgPd)
+            @Html.ValidationMessageFor(model => model.intgPd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.bufTime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.bufTime)
+            @Html.ValidationMessageFor(model => model.bufTime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ldInst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ldInst)
+            @Html.ValidationMessageFor(model => model.ldInst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnClass)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("lnClass", String.Empty)
+            @Html.ValidationMessageFor(model => model.lnClass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnInst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lnInst)
+            @Html.ValidationMessageFor(model => model.lnInst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logEna)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logEna)
+            @Html.ValidationMessageFor(model => model.logEna)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logName)
+            @Html.ValidationMessageFor(model => model.logName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.prefix)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.prefix)
+            @Html.ValidationMessageFor(model => model.prefix)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.reasonCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.reasonCode)
+            @Html.ValidationMessageFor(model => model.reasonCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN0)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN0", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN0)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerType, "Owner Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerType", String.Empty)
+            @Html.ValidationMessageFor(model => model.OwnerType)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

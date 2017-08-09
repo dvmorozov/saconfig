@@ -1,0 +1,55 @@
+﻿@model SAConfig.Models.saconfig_tClientServices
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ClientServices Attributes</legend>
+
+    <div class="display-label">goose</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goose)
+    </div>
+
+    <div class="display-label">gsse</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gsse)
+    </div>
+
+    <div class="display-label">bufReport</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bufReport)
+    </div>
+
+    <div class="display-label">unbufReport</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unbufReport)
+    </div>
+
+    <div class="display-label">readLog</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.readLog)
+    </div>
+
+    <div class="display-label">sv</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sv)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

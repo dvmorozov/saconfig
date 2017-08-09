@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tServiceWithMaxAndMaxAttributes>
+
+@{
+    ViewBag.Title = "ServiceWithMaxAndMaxAttributes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ServiceWithMaxAndMaxAttributes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            value
+        </th>
+        <th>
+            maxAttributes
+        </th>
+        <th>
+            max
+        </th>
+        <th>
+            Services
+        </th>
+        <th>
+            Element Name
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.maxAttributes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServices.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_ServiceWithMaxAndMaxAttributesElementName.ElementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

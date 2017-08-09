@@ -1,0 +1,40 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_SettingGroups>
+
+@{
+    ViewBag.Title = "SettingGroups";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SettingGroups</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { servicesID = (long)ViewBag.ServicesID, backURL = (string)(ViewBag.BackURL) })
+</p>
+<table>
+    <tr>
+        <th>
+            Services
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServices.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)(ViewBag.BackURL) })
+        </td>
+    </tr>
+}
+
+</table>

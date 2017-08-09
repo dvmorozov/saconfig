@@ -1,0 +1,57 @@
+﻿@model SAConfig.Models.saconfig_tTrgOps
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TrgOps Attributes</legend>
+
+    <div class="display-label">dchg</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dchg)
+    </div>
+
+    <div class="display-label">dupd</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dupd)
+    </div>
+
+    <div class="display-label">gi</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gi)
+    </div>
+
+    <div class="display-label">period</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.period)
+    </div>
+
+    <div class="display-label">qchg</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.qchg)
+    </div>
+
+    <div class="display-label">ReportControl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tReportControl.desc)
+    </div>
+
+    <div class="display-label">LogControl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tLogControl.desc)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_LogControlOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

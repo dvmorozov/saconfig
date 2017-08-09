@@ -1,0 +1,80 @@
+﻿@model SAConfig.Models.saconfig_tLN0
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("GSEControl", "Index", "GSEControl") |
+    @Html.ActionLink("SampledValueControl", "Index", "SampledValueControl") |
+    @Html.ActionLink("SettingControl", "Index", "SettingControl") |
+    @Html.ActionLink("Inputs", "Index", "Inputs") |
+    @Html.ActionLink("DOI", "Index", "DOI") |
+    @Html.ActionLink("LogControl", "Index", "LogControl") |
+    @Html.ActionLink("ReportControl", "Index", "ReportControl") |
+    @Html.ActionLink("DataSet", "Index", "DataSet") |
+    @Html.ActionLink("Log", "Index", "Log")
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>LN0 Attributes</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lnType)
+            @Html.ValidationMessageFor(model => model.lnType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnClass, "lnClass")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("lnClass", String.Empty)
+            @Html.ValidationMessageFor(model => model.lnClass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.inst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.inst)
+            @Html.ValidationMessageFor(model => model.inst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LDevice, "LDevice")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LDevice", String.Empty)
+            @Html.ValidationMessageFor(model => model.LDevice)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,42 @@
+﻿@model SAConfig.Models.saconfig_tServiceWithMaxAndMaxAttributes
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ServiceWithMaxAndMaxAttributes Attributes</legend>
+
+    <div class="display-label">value</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.value)
+    </div>
+
+    <div class="display-label">maxAttributes</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.maxAttributes)
+    </div>
+
+    <div class="display-label">max</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.max)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_ServiceWithMaxAndMaxAttributesElementName.ElementName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tBDA>
+
+@{
+    ViewBag.Title = "BDA";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>BDA</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            sAddr
+        </th>
+        <th>
+            bType
+        </th>
+        <th>
+            valKind
+        </th>
+        <th>
+            type
+        </th>
+        <th>
+            count
+        </th>
+        <th>
+            DA
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tAttributeNameEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sAddr)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tBasicTypeEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tValKindEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.count)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tDA.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

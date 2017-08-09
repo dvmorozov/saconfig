@@ -1,0 +1,32 @@
+﻿@model SAConfig.Models.saconfig_tConfLNs
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ConfLNs Attributes</legend>
+
+    <div class="display-label">fixPrefix</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fixPrefix)
+    </div>
+
+    <div class="display-label">fixLnInst</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fixLnInst)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

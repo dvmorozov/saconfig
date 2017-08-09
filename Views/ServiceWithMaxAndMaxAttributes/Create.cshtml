@@ -1,0 +1,66 @@
+﻿@model SAConfig.Models.saconfig_tServiceWithMaxAndMaxAttributes
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>ServiceWithMaxAndMaxAttributes Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.value)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.value)
+            @Html.ValidationMessageFor(model => model.value)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.maxAttributes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.maxAttributes)
+            @Html.ValidationMessageFor(model => model.maxAttributes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.max)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.max)
+            @Html.ValidationMessageFor(model => model.max)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Services, "Services")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Services", String.Empty)
+            @Html.ValidationMessageFor(model => model.Services)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ElementName, "Element Name")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElementName", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElementName)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

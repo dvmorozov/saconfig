@@ -1,0 +1,52 @@
+﻿@model SAConfig.Models.saconfig_SmvOpts
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SmvOpts Attributes</legend>
+
+    <div class="display-label">dataRef</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataRef)
+    </div>
+
+    <div class="display-label">dataSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataSet)
+    </div>
+
+    <div class="display-label">refreshTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.refreshTime)
+    </div>
+
+    <div class="display-label">sampleRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sampleRate)
+    </div>
+
+    <div class="display-label">sampleSynchronized</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sampleSynchronized)
+    </div>
+
+    <div class="display-label">security</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.security)
+    </div>
+
+    <div class="display-label">SampledValueControl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSampledValueControl.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

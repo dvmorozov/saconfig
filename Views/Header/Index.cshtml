@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tHeader>
+
+@{
+    ViewBag.Title = "Header";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Header</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) })
+</p>
+
+<table>
+    <tr>
+        <th>
+            id
+        </th>
+        <th>
+            version
+        </th>
+        <th>
+            revision
+        </th>
+        <th>
+            toolID
+        </th>
+        <th>
+            SCL
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.revision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.toolID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_SCL.version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID_, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID_, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID_, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) })
+        </td>
+    </tr>
+}
+</table>
+
+<br>
+<div>
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</div>

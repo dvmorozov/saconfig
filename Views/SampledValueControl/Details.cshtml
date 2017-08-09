@@ -1,0 +1,67 @@
+﻿@model SAConfig.Models.saconfig_tSampledValueControl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SampledValueControl Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">datSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datSet)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">confRev</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.confRev)
+    </div>
+
+    <div class="display-label">multicast</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.multicast)
+    </div>
+
+    <div class="display-label">nofASDU</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nofASDU)
+    </div>
+
+    <div class="display-label">smpMod</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_SmpMod.value)
+    </div>
+
+    <div class="display-label">smpRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.smpRate)
+    </div>
+
+    <div class="display-label">smvID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.smvID)
+    </div>
+
+    <div class="display-label">LN0</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tLN0.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

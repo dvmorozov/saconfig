@@ -1,0 +1,72 @@
+﻿@model SAConfig.Models.saconfig_tTerminal
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Terminal Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">connectivityNode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.connectivityNode)
+    </div>
+
+    <div class="display-label">substationName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.substationName)
+    </div>
+
+    <div class="display-label">voltageLevelName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.voltageLevelName)
+    </div>
+
+    <div class="display-label">bayName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bayName)
+    </div>
+
+    <div class="display-label">cNodeName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cNodeName)
+    </div>
+
+    <div class="display-label">neutralPoint</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.neutralPoint)
+    </div>
+
+    <div class="display-label">TransformerWinding</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tTransformerWinding.type)
+    </div>
+
+    <div class="display-label">ConductingEquipment</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tConductingEquipment.ID)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_TerminalOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,37 @@
+﻿@model SAConfig.Models.saconfig_tSubNetwork
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SubNetwork Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type)
+    </div>
+
+    <div class="display-label">Communication</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tCommunication.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

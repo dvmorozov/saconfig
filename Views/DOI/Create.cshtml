@@ -1,0 +1,82 @@
+﻿@model SAConfig.Models.saconfig_tDOI
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>DOI Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ix)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ix)
+            @Html.ValidationMessageFor(model => model.ix)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.accessControl)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.accessControl)
+            @Html.ValidationMessageFor(model => model.accessControl)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN, "LN")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN0, "LN0")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN0", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN0)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerType, "Owner Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerType", String.Empty)
+            @Html.ValidationMessageFor(model => model.OwnerType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

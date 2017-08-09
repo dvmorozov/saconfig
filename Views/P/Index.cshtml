@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tP>
+
+@{
+    ViewBag.Title = "P";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>P</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            type
+        </th>
+        <th>
+            PhysConn
+        </th>
+        <th>
+            Address
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            value
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tPTypeEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tPhysConn.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tAddress.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_POwnerType.OwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

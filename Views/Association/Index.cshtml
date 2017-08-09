@@ -1,0 +1,88 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tAssociation>
+
+@{
+    ViewBag.Title = "Association";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Association</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            iedName
+        </th>
+        <th>
+            ldInst
+        </th>
+        <th>
+            prefix
+        </th>
+        <th>
+            lnClass
+        </th>
+        <th>
+            lnInst
+        </th>
+        <th>
+            kind
+        </th>
+        <th>
+            associationID
+        </th>
+        <th>
+            Server
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iedName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ldInst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.prefix)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tLNClassEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lnInst)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tAssociationKindEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.associationID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServer.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

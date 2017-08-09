@@ -1,0 +1,37 @@
+﻿@model SAConfig.Models.saconfig_tAddress
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Address Attributes</legend>
+
+    <div class="display-label">ConnectedAP</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tConnectedAP.desc)
+    </div>
+
+    <div class="display-label">SMV</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSMV.desc)
+    </div>
+
+    <div class="display-label">GSE</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tGSE.desc)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_AddressOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

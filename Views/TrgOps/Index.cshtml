@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tTrgOps>
+
+@{
+    ViewBag.Title = "TrgOps";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TrgOps</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            dchg
+        </th>
+        <th>
+            dupd
+        </th>
+        <th>
+            gi
+        </th>
+        <th>
+            period
+        </th>
+        <th>
+            qchg
+        </th>
+        <th>
+            ReportControl
+        </th>
+        <th>
+            LogControl
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dchg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dupd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.period)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.qchg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tReportControl.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tLogControl.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_LogControlOwnerType.OwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

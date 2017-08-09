@@ -1,0 +1,77 @@
+﻿@model SAConfig.Models.saconfig_tReportControl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ReportControl Attributes</legend>
+
+    <div class="display-label">Desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">datSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.datSet)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">intgPd</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.intgPd)
+    </div>
+
+    <div class="display-label">buffered</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.buffered)
+    </div>
+
+    <div class="display-label">bufTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bufTime)
+    </div>
+
+    <div class="display-label">confRev</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.confRev)
+    </div>
+
+    <div class="display-label">indexed</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.indexed)
+    </div>
+
+    <div class="display-label">rptID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.rptID)
+    </div>
+
+    <div class="display-label">LN</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tLN.desc)
+    </div>
+
+    <div class="display-label">LN0</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LN0)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_ReportControlOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

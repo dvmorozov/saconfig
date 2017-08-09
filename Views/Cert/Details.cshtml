@@ -1,0 +1,37 @@
+﻿@model SAConfig.Models.saconfig_tCert
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Cert Attributes</legend>
+
+    <div class="display-label">idHierarchy</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idHierarchy)
+    </div>
+
+    <div class="display-label">commonName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.commonName)
+    </div>
+
+    <div class="display-label">Certificate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tCertificate.serialNumber)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_CertElementName.ElementName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

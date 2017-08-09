@@ -1,0 +1,52 @@
+﻿@model SAConfig.Models.saconfig_tReportSettings
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ReportSettings Attributes</legend>
+
+    <div class="display-label">intgPd</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum4.value)
+    </div>
+
+    <div class="display-label">optFields</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum1.value)
+    </div>
+
+    <div class="display-label">bufTime</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum2.value)
+    </div>
+
+    <div class="display-label">trgOps</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum3.value)
+    </div>
+
+    <div class="display-label">rptID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum.value)
+    </div>
+
+    <div class="display-label">resvTms</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.resvTms)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

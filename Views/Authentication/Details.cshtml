@@ -1,0 +1,47 @@
+﻿@model SAConfig.Models.saconfig_Authentication
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Authentication Attributes</legend>
+
+    <div class="display-label">none</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.none)
+    </div>
+
+    <div class="display-label">password</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.password)
+    </div>
+
+    <div class="display-label">weak</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.weak)
+    </div>
+
+    <div class="display-label">strong</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.strong)
+    </div>
+
+    <div class="display-label">certificate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.certificate)
+    </div>
+
+    <div class="display-label">Server</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServer.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

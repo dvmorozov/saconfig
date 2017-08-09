@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_SmvOpts>
+
+@{
+    ViewBag.Title = "SmvOpts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SmvOpts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            dataRef
+        </th>
+        <th>
+            dataSet
+        </th>
+        <th>
+            refreshTime
+        </th>
+        <th>
+            sampleRate
+        </th>
+        <th>
+            sampleSynchronized
+        </th>
+        <th>
+            security
+        </th>
+        <th>
+            SampledValueControl
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataRef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataSet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.refreshTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sampleRate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sampleSynchronized)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.security)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tSampledValueControl.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

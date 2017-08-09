@@ -1,0 +1,42 @@
+﻿@model SAConfig.Models.saconfig_tDOType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DOType Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ident, "id")
+    </div>
+
+    <div class="display-label">iedType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iedType)
+    </div>
+
+    <div class="display-label">cdc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tCDCEnum.value)
+    </div>
+
+    <div class="display-label">DataTypeTemplates</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDataTypeTemplates.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID_ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

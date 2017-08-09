@@ -1,0 +1,41 @@
+﻿@model SAConfig.Models.saconfig_tFunction
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Function Attributes</legend>
+
+    <div class="display-label">type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_FunctionOwnerType.FunctionOwnerType)
+    </div>
+
+    <div class="display-label">Substation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSubstation.desc)
+    </div>
+
+    <div class="display-label">VoltageLevel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tVoltageLevel.desc)
+    </div>
+
+    <div class="display-label">Bay</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tBay.desc)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

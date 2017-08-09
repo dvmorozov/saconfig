@@ -1,0 +1,54 @@
+﻿@model SAConfig.Models.saconfig_tServiceYesNo
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>@Html.Raw((string)ViewBag.ElementName) Attributes</legend>
+
+        @Html.Hidden("upperLevelID", (long)ViewBag.UpperLevelID)
+        @Html.Hidden("elementName", (string)ViewBag.ElementName)
+        @Html.Hidden("ownerType", (string)ViewBag.OwnerType)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.value)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.value)
+            @Html.ValidationMessageFor(model => model.value)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Services, "Services")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Services", String.Empty)
+            @Html.ValidationMessageFor(model => model.Services)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SettingGroups, "SettingGroups")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SettingGroups", String.Empty)
+            @Html.ValidationMessageFor(model => model.SettingGroups)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</div>

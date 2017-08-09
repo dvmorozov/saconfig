@@ -1,0 +1,47 @@
+﻿@model SAConfig.Models.saconfig_tCertificate
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>@Html.Raw((string)ViewBag.ElementName) Attributes</legend>
+
+    <div class="display-label">xferNumber</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.xferNumber)
+    </div>
+
+    <div class="display-label">serialNumber</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.serialNumber)
+    </div>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">AccessPoint</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tAccessPoint.desc)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_CertificateElementName.ElementName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

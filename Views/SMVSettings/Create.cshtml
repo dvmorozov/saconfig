@@ -1,0 +1,90 @@
+﻿@model SAConfig.Models.saconfig_tSVMSettings
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SVMSettings Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InternalElement, "Element Name")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("InternalElement", String.Empty)
+            @Html.ValidationMessageFor(model => model.InternalElement)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.svID, "svID")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("svID", String.Empty)
+            @Html.ValidationMessageFor(model => model.svID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.optFields, "optFields")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("optFields", String.Empty)
+            @Html.ValidationMessageFor(model => model.optFields)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.smpRate, "smpRate")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("smpRate", String.Empty)
+            @Html.ValidationMessageFor(model => model.smpRate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.samplesPerSec, "samplesPerSec")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("samplesPerSec", String.Empty)
+            @Html.ValidationMessageFor(model => model.samplesPerSec)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cbName, "cbName")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("cbName", String.Empty)
+            @Html.ValidationMessageFor(model => model.cbName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.datSet, "datSet")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("datSet", String.Empty)
+            @Html.ValidationMessageFor(model => model.datSet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Services, "Services")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Services", String.Empty)
+            @Html.ValidationMessageFor(model => model.Services)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,114 @@
+﻿@model SAConfig.Models.saconfig_tTerminal
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Terminal Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.connectivityNode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.connectivityNode)
+            @Html.ValidationMessageFor(model => model.connectivityNode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.substationName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.substationName)
+            @Html.ValidationMessageFor(model => model.substationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.voltageLevelName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.voltageLevelName)
+            @Html.ValidationMessageFor(model => model.voltageLevelName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.bayName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.bayName)
+            @Html.ValidationMessageFor(model => model.bayName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cNodeName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cNodeName)
+            @Html.ValidationMessageFor(model => model.cNodeName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.neutralPoint)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.neutralPoint)
+            @Html.ValidationMessageFor(model => model.neutralPoint)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TransformerWinding)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("TransformerWinding", String.Empty)
+            @Html.ValidationMessageFor(model => model.TransformerWinding)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConductingEqupment)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ConductingEqupment", String.Empty)
+            @Html.ValidationMessageFor(model => model.ConductingEqupment)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerType, "Owner Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerType", String.Empty)
+            @Html.ValidationMessageFor(model => model.OwnerType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

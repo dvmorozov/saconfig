@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tIED>
+
+@{
+    ViewBag.Title = "IED";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>IED</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) })
+</p>
+<table>
+    <tr>
+        <th>
+            name
+        </th>
+        <th>
+            type
+        </th>
+        <th>
+            desc
+        </th>
+        <th>
+            manufacturer
+        </th>
+        <th>
+            configVersion
+        </th>
+        <th>
+            originalSclVersion
+        </th>
+        <th>
+            originalSclRevision
+        </th>
+        <th>
+            engRight
+        </th>
+        <th>
+            owner
+        </th>
+        <th>
+            SCL
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.manufacturer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.configVersion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.originalSclVersion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.originalSclRevision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tRightEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.owner)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_SCL.version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) })
+        </td>
+    </tr>
+}
+
+</table>

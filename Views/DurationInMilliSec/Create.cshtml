@@ -1,0 +1,58 @@
+﻿@model SAConfig.Models.saconfig_tDurationInMilliSec
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>DurationInMilliSec Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.unit, "unit")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("unit", String.Empty)
+            @Html.ValidationMessageFor(model => model.unit)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.multiplier, "multiplier")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("multiplier", String.Empty)
+            @Html.ValidationMessageFor(model => model.multiplier)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GSE, "GSE")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("GSE", String.Empty)
+            @Html.ValidationMessageFor(model => model.GSE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ElementName, "Element Name")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElementName", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElementName)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

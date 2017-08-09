@@ -1,0 +1,52 @@
+﻿@model SAConfig.Models.saconfig_tClientServices
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ClientServices Attributes</legend>
+
+    <div class="display-label">goose</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goose)
+    </div>
+
+    <div class="display-label">gsse</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.gsse)
+    </div>
+
+    <div class="display-label">bufReport</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bufReport)
+    </div>
+
+    <div class="display-label">unbufReport</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.unbufReport)
+    </div>
+
+    <div class="display-label">readLog</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.readLog)
+    </div>
+
+    <div class="display-label">sv</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sv)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿@model SAConfig.Models.saconfig_tBDA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BDA Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tAttributeNameEnum.value)
+    </div>
+
+    <div class="display-label">sAddr</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sAddr)
+    </div>
+
+    <div class="display-label">bType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tBasicTypeEnum.value)
+    </div>
+
+    <div class="display-label">valKind</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tValKindEnum.value)
+    </div>
+
+    <div class="display-label">type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type)
+    </div>
+
+    <div class="display-label">count</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.count)
+    </div>
+
+    <div class="display-label">DA</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDA.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

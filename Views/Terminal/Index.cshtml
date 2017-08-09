@@ -1,0 +1,100 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tTerminal>
+
+@{
+    ViewBag.Title = "Terminal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Terminal</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            connectivityNode
+        </th>
+        <th>
+            substationName
+        </th>
+        <th>
+            voltageLevelName
+        </th>
+        <th>
+            bayName
+        </th>
+        <th>
+            cNodeName
+        </th>
+        <th>
+            neutralPoint
+        </th>
+        <th>
+            TransformerWinding
+        </th>
+        <th>
+            ConductingEquipment
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.connectivityNode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.substationName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.voltageLevelName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bayName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cNodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.neutralPoint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tTransformerWinding.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tConductingEquipment.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_TerminalOwnerType.OwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

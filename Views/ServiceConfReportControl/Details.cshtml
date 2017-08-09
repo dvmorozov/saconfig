@@ -1,0 +1,47 @@
+﻿@model SAConfig.Models.saconfig_tServiceConfReportControl
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ServiceConfReportControl Attributes</legend>
+
+    <div class="display-label">bufMode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceConfReportControlBufModeEnum.value)
+    </div>
+
+    <div class="display-label">bufConf</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bufConf)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+    <div class="display-label">max</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.max)
+    </div>
+
+    <div class="display-label">value</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.value)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceConfReportControlElementName.ElementName)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

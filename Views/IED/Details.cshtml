@@ -1,0 +1,67 @@
+﻿@model SAConfig.Models.saconfig_tIED
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>IED Attributes</legend>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.type)
+    </div>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">manufacturer</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.manufacturer)
+    </div>
+
+    <div class="display-label">configVersion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.configVersion)
+    </div>
+
+    <div class="display-label">originalSclVersion</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.originalSclVersion)
+    </div>
+
+    <div class="display-label">originalSclRevision</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.originalSclRevision)
+    </div>
+
+    <div class="display-label">engRight</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tRightEnum.value)
+    </div>
+
+    <div class="display-label">owner</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.owner)
+    </div>
+
+    <div class="display-label">SCL</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_SCL.version)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tDOType>
+
+@{
+    ViewBag.Title = "DOType";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DOType</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            id
+        </th>
+        <th>
+            iedType
+        </th>
+        <th>
+            cdc
+        </th>
+        <th>
+            DataTypeTemplates
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ident)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iedType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tCDCEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tDataTypeTemplates.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_ }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_ }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_ })
+        </td>
+    </tr>
+}
+
+</table>

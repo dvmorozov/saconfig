@@ -1,0 +1,42 @@
+﻿@model SAConfig.Models.saconfig_tVal
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Val Attributes</legend>
+
+    <div class="display-label">sGroup</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sGroup)
+    </div>
+
+    <div class="display-label">DAI</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDAI.desc)
+    </div>
+
+    <div class="display-label">DA</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDA.desc)
+    </div>
+
+    <div class="display-label">BDA</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tBDA.desc)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_ValOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

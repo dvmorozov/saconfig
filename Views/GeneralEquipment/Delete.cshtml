@@ -1,0 +1,54 @@
+﻿@model SAConfig.Models.saconfig_tGeneralEquipment
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>GeneralEquipment Attributes</legend>
+
+    <div class="display-label">type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tGeneralEquipmentEnum.type)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_GeneralEquipmentOwnerType.GeneralEquipmentOwnerType)
+    </div>
+
+    <div class="display-label">Substation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSubstation.desc)
+    </div>
+
+    <div class="display-label">VoltageLevel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tVoltageLevel.desc)
+    </div>
+
+    <div class="display-label">Bay</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tBay.desc)
+    </div>
+
+    <div class="display-label">Function</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tFunction.type)
+    </div>
+
+    <div class="display-label">SubFunction</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSubFunction.type)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

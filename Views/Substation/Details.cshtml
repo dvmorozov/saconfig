@@ -1,0 +1,26 @@
+﻿@model SAConfig.Models.saconfig_tSubstation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Substation Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

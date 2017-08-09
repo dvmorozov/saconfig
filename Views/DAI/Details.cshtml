@@ -1,0 +1,57 @@
+﻿@model SAConfig.Models.saconfig_tDAI
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DAI Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tAttributeNameEnum.value)
+    </div>
+
+    <div class="display-label">sAddr</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.sAddr)
+    </div>
+
+    <div class="display-label">valKind</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tValKindEnum.value)
+    </div>
+
+    <div class="display-label">ix</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ix)
+    </div>
+
+    <div class="display-label">DOI</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDOI.desc)
+    </div>
+
+    <div class="display-label">SDI</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tSDI.desc)
+    </div>
+
+    <div class="display-label">Owner Type</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_DAIOwnerType.OwnerType)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

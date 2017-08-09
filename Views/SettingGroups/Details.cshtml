@@ -1,0 +1,22 @@
+﻿@model SAConfig.Models.saconfig_SettingGroups
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SettingGroups Attributes</legend>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)(ViewBag.BackURL) }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

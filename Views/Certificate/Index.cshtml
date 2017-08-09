@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tCertificate>
+
+@{
+    ViewBag.Title = "Certificate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.Raw((string)ViewBag.ElementName)</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = (long)ViewBag.UpperLevelID, backURL = (string)ViewBag.BackURL, elementName = (string)ViewBag.ElementName })
+</p>
+<table>
+    <tr>
+        <th>
+            xferNumber
+        </th>
+        <th>
+            serialNumber
+        </th>
+        <th>
+            desc
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            AccessPoint
+        </th>
+        <th>
+            Element Name
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.xferNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.serialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tAccessPoint.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_CertificateElementName.ElementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName })
+        </td>
+    </tr>
+}
+
+</table>

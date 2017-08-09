@@ -1,0 +1,45 @@
+﻿@model SAConfig.Models.saconfig_tServiceWithMaxAndMaxAttributes
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ServiceWithMaxAndMaxAttributes Attributes</legend>
+
+    <div class="display-label">value</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.value)
+    </div>
+
+    <div class="display-label">maxAttributes</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.maxAttributes)
+    </div>
+
+    <div class="display-label">max</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.max)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_ServiceWithMaxAndMaxAttributesElementName.ElementName)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,58 @@
+﻿@model SAConfig.Models.saconfig_tCert
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Cert Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idHierarchy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idHierarchy)
+            @Html.ValidationMessageFor(model => model.idHierarchy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.commonName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.commonName)
+            @Html.ValidationMessageFor(model => model.commonName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Certificate, "Certificate")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Certificate", String.Empty)
+            @Html.ValidationMessageFor(model => model.Certificate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ElementName, "Element Name")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ElementName", String.Empty)
+            @Html.ValidationMessageFor(model => model.ElementName)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

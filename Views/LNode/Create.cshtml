@@ -1,0 +1,114 @@
+﻿@model SAConfig.Models.saconfig_tLNode
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>LNode Attributes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.iedName, iedName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.iedName)
+            @Html.ValidationMessageFor(model => model.iedName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idInst, "ldInst")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idInst)
+            @Html.ValidationMessageFor(model => model.idInst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.prefix)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.prefix)
+            @Html.ValidationMessageFor(model => model.prefix)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnClass)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("lnClass", String.Empty)
+            @Html.ValidationMessageFor(model => model.lnClass)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnInst)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lnInst)
+            @Html.ValidationMessageFor(model => model.lnInst)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lnType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lnType)
+            @Html.ValidationMessageFor(model => model.lnType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConnectivityNode, "ConnectivityNode")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ConnectivityNode", String.Empty)
+            @Html.ValidationMessageFor(model => model.ConnectivityNode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bay)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Bay", String.Empty)
+            @Html.ValidationMessageFor(model => model.Bay)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Substation)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Substation", String.Empty)
+            @Html.ValidationMessageFor(model => model.Substation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.VoltageLevel)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("VoltageLevel", String.Empty)
+            @Html.ValidationMessageFor(model => model.VoltageLevel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OwnerType, "Owner Type")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OwnerType", String.Empty)
+            @Html.ValidationMessageFor(model => model.OwnerType)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

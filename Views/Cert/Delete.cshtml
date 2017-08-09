@@ -1,0 +1,40 @@
+﻿@model SAConfig.Models.saconfig_tCert
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Cert Attributes</legend>
+
+    <div class="display-label">idHierarchy</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idHierarchy)
+    </div>
+
+    <div class="display-label">commonName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.commonName)
+    </div>
+
+    <div class="display-label">Certificate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tCertificate.serialNumber)
+    </div>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_CertElementName.ElementName)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

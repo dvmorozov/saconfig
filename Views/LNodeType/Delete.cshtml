@@ -1,0 +1,45 @@
+﻿@model SAConfig.Models.saconfig_tLNodeType
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>LNodeType Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ident)
+    </div>
+
+    <div class="display-label">iedType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iedType)
+    </div>
+
+    <div class="display-label">lnClass</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tLNClassEnum.value)
+    </div>
+
+    <div class="display-label">DataTypeTemplates</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDataTypeTemplates.ID)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

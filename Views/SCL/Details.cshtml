@@ -1,0 +1,37 @@
+﻿@model SAConfig.Models.saconfig_SCL
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SCL Attributes</legend>
+
+    <div class="display-label">Text</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tText.value)
+    </div>
+
+    <div class="display-label">version</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.version)
+    </div>
+
+    <div class="display-label">revision</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.revision)
+    </div>
+
+    <div class="display-label">Project</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_Project.name)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

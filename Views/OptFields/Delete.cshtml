@@ -1,0 +1,70 @@
+﻿@model SAConfig.Models.saconfig_OptFields
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>OptFields Attributes</legend>
+
+    <div class="display-label">bufOvfl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bufOvfl)
+    </div>
+
+    <div class="display-label">configRef</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.configRef)
+    </div>
+
+    <div class="display-label">dataRef</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataRef)
+    </div>
+
+    <div class="display-label">dataSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dataSet)
+    </div>
+
+    <div class="display-label">entryID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.entryID)
+    </div>
+
+    <div class="display-label">reasonCode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.reasonCode)
+    </div>
+
+    <div class="display-label">segmentation</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.segmentation)
+    </div>
+
+    <div class="display-label">seqNum</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.seqNum)
+    </div>
+
+    <div class="display-label">timeStamp</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.timeStamp)
+    </div>
+
+    <div class="display-label">ReportControl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tReportControl.desc)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

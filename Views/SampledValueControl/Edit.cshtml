@@ -1,0 +1,113 @@
+﻿@model SAConfig.Models.saconfig_tSampledValueControl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("IEDName", "Index", "IEDName") |
+    @Html.ActionLink("SMVOpts", "Index", "SMVOpts")
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SampledValueControl Attributes</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.datSet)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.datSet)
+            @Html.ValidationMessageFor(model => model.datSet)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.confRev)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.confRev)
+            @Html.ValidationMessageFor(model => model.confRev)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.multicast)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.multicast)
+            @Html.ValidationMessageFor(model => model.multicast)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nofASDU)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nofASDU)
+            @Html.ValidationMessageFor(model => model.nofASDU)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.smpMod)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("smpMod", String.Empty)
+            @Html.ValidationMessageFor(model => model.smpMod)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.smpRate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.smpRate)
+            @Html.ValidationMessageFor(model => model.smpRate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.smvID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.smvID)
+            @Html.ValidationMessageFor(model => model.smvID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN0)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN0", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN0)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

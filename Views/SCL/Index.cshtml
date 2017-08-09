@@ -1,0 +1,60 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_SCL>
+
+@{
+    ViewBag.Title = "SCL";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SCL</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table>
+    <tr>
+        <th>
+            Text
+        </th>
+        <th>
+            version
+        </th>
+        <th>
+            revision
+        </th>
+        <th>
+            Project
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tText.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.version)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.revision)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_Project.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Text", "TextCreateEdit", new { id = item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+</table>
+

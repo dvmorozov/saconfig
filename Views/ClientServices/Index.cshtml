@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tClientServices>
+
+@{
+    ViewBag.Title = "ClientServices";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ClientServices</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            goose
+        </th>
+        <th>
+            gsse
+        </th>
+        <th>
+            bufReport
+        </th>
+        <th>
+            unbufReport
+        </th>
+        <th>
+            readLog
+        </th>
+        <th>
+            sv
+        </th>
+        <th>
+            Services
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.goose)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gsse)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bufReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.unbufReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.readLog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sv)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServices.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model SAConfig.Models.saconfig_SettingGroups
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<p>
+    @Html.ActionLink("SGEdit", "ServiceYesNoList", new { id = Model.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)ViewBag.BackURL, elementName = "SGEdit", ownerType = "SettingGroups" }) |
+    @Html.ActionLink("ConfSG", "ServiceYesNoList", new { id = Model.ID, servicesID = (long)ViewBag.ServicesID, backURL = (string)ViewBag.BackURL, elementName = "ConfSG", ownerType = "SettingGroups" })
+</p>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SettingGroups Attributes</legend>
+
+        @Html.HiddenFor(model => model.ID)
+        @Html.Hidden("servicesID", (long)ViewBag.ServicesID)
+        @Html.Hidden("backURL", (string)ViewBag.BackURL)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Services, "Services")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Services", String.Empty)
+            @Html.ValidationMessageFor(model => model.Services)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</div>

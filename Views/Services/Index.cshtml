@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tServices>
+
+@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Services</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = (long)ViewBag.IEDID, backURL = (string)(ViewBag.BackURL), ownerType = (string)(ViewBag.OwnerType) })
+</p>
+<table>
+    <tr>
+        <th>
+            nameLength
+        </th>
+        <th>
+            IED
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameLength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tIED.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID, iedID = (long)ViewBag.IEDID, backURL = (string)(ViewBag.BackURL), ownerType = (string)(ViewBag.OwnerType) }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID, iedID = (long)ViewBag.IEDID, backURL = (string)(ViewBag.BackURL), ownerType = (string)(ViewBag.OwnerType) }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID, iedID = (long)ViewBag.IEDID, backURL = (string)(ViewBag.BackURL), ownerType = (string)(ViewBag.OwnerType) })
+        </td>
+    </tr>
+}
+
+</table>

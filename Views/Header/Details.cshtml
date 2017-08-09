@@ -1,0 +1,42 @@
+﻿@model SAConfig.Models.saconfig_tHeader
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Header Attributes</legend>
+
+    <div class="display-label">id</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ident)
+    </div>
+
+    <div class="display-label">version</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.version)
+    </div>
+
+    <div class="display-label">revision</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.revision)
+    </div>
+
+    <div class="display-label">toolID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.toolID)
+    </div>
+
+    <div class="display-label">SCL</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_SCL.version)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID_, sclID = (long)ViewBag.SCLID, backURL = (string)(ViewBag.BackURL) }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

@@ -1,0 +1,60 @@
+﻿@model SAConfig.Models.saconfig_tSettingControl
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>SettingsControl Attributes</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.actSG)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.actSG)
+            @Html.ValidationMessageFor(model => model.actSG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numOfSGs)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numOfSGs)
+            @Html.ValidationMessageFor(model => model.numOfSGs)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LN0)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("LN0", String.Empty)
+            @Html.ValidationMessageFor(model => model.LN0)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

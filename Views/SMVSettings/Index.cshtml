@@ -1,0 +1,82 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tSVMSettings>
+
+@{
+    ViewBag.Title = "SVMSettings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SVMSettings</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            Element Name
+        </th>
+        <th>
+            svID
+        </th>
+        <th>
+            optFields
+        </th>
+        <th>
+            smpRate
+        </th>
+        <th>
+            samplesPerSec
+        </th>
+        <th>
+            cbName
+        </th>
+        <th>
+            datSet
+        </th>
+        <th>
+            Services
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_SVMSettingsInternalElementName.ElementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum1.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum2.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum3.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum4.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServiceSettingsEnum5.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServices.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

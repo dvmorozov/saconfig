@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tFunction>
+
+@{
+    ViewBag.Title = "Function";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Function</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            type
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            Substation
+        </th>
+        <th>
+            VoltageLevel
+        </th>
+        <th>
+            Bay
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_FunctionOwnerType.FunctionOwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tSubstation.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tVoltageLevel.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tBay.desc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

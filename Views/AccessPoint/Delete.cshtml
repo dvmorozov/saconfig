@@ -1,0 +1,50 @@
+﻿@model SAConfig.Models.saconfig_tAccessPoint
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend>AccessPoint Attributes</legend>
+
+    @Html.Hidden("iedID", (long)ViewBag.IEDID)
+    @Html.Hidden("backURL", (string)ViewBag.BackURL)
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">router</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.router)
+    </div>
+
+    <div class="display-label">clock</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.clock)
+    </div>
+
+    <div class="display-label">IED</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tIED.name)
+    </div>
+
+</fieldset>
+
+<p>
+    <input type="submit" value="Delete" /> |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>
+}

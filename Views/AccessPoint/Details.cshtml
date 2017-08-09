@@ -1,0 +1,42 @@
+﻿@model SAConfig.Models.saconfig_tAccessPoint
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>AccessPoint Attributes</legend>
+
+    <div class="display-label">desc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.desc)
+    </div>
+
+    <div class="display-label">name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name)
+    </div>
+
+    <div class="display-label">router</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.router)
+    </div>
+
+    <div class="display-label">clock</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.clock)
+    </div>
+
+    <div class="display-label">IED</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tIED.name)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID, iedID = (long)ViewBag.IEDID, backURL = (string)(ViewBag.BackURL) }) |
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</p>

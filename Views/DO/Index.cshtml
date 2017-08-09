@@ -1,0 +1,70 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tDO>
+
+@{
+    ViewBag.Title = "DO";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DO</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            name
+        </th>
+        <th>
+            type
+        </th>
+        <th>
+            accessControl
+        </th>
+        <th>
+            transient
+        </th>
+        <th>
+            LNodeType
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.accessControl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transient)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tLNodeType.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

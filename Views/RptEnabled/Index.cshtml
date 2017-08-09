@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tRptEnabled>
+
+@{
+    ViewBag.Title = "RptEnabled";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>RptEnabled</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            desc
+        </th>
+        <th>
+            max
+        </th>
+        <th>
+            ReportControl
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.max)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tReportControl.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

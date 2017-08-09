@@ -1,0 +1,31 @@
+﻿@model SAConfig.Models.saconfig_tText
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Text Attributes</legend>
+
+    @Html.Hidden("backDeleteUrl", (String)ViewBag.BackDeleteUrl)
+
+    <div class="display-label">value</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.value)
+    </div>
+
+    <div class="display-label">source</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.source)
+    </div>
+
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" />
+    </p>
+}

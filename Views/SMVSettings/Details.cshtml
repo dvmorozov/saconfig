@@ -1,0 +1,57 @@
+﻿@model SAConfig.Models.saconfig_tSVMSettings
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SVMSettings Attributes</legend>
+
+    <div class="display-label">Element Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_SVMSettingsInternalElementName.ElementName)
+    </div>
+
+    <div class="display-label">svID</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum.value)
+    </div>
+
+    <div class="display-label">optFields</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum1.value)
+    </div>
+
+    <div class="display-label">smpRate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum2.value)
+    </div>
+
+    <div class="display-label">samplesPerSec</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum3.value)
+    </div>
+
+    <div class="display-label">cbName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum4.value)
+    </div>
+
+    <div class="display-label">datSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServiceSettingsEnum5.value)
+    </div>
+
+    <div class="display-label">Services</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tServices.ID)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

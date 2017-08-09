@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tServiceYesNo>
+
+@{
+    ViewBag.Title = "ServiceYesNo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Html.Raw((string)ViewBag.ElementName)</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = (long)ViewBag.UpperLevelID, backURL = (string)ViewBag.BackURL, elementName = (string)ViewBag.ElementName, ownerType = (string)ViewBag.OwnerType })
+</p>
+<table>
+    <tr>
+        <th>
+            value
+        </th>
+        <th>
+            Element Name
+        </th>
+        <th>
+            Owner Type
+        </th>
+        <th>
+            Services
+        </th>
+        <th>
+            SettingGroups
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_ServiceYesNoElementName.ElementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_ServiceYesNoOwnerType.OwnerType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tServices.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_SettingGroups.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName, ownerType = (string)ViewBag.OwnerType }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName, ownerType = (string)ViewBag.OwnerType }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID, upperLevelID = (long)ViewBag.UpperLevelID, backURL = (string)(ViewBag.BackURL), elementName = (string)ViewBag.ElementName, ownerType = (string)ViewBag.OwnerType })
+        </td>
+    </tr>
+}
+
+</table>

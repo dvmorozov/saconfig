@@ -1,0 +1,68 @@
+﻿@model SAConfig.Models.saconfig_tHeader
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Header Attributes</legend>
+
+        @Html.Hidden("sclID", (long)ViewBag.SCLID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ident, "id")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ident)
+            @Html.ValidationMessageFor(model => model.version)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.version)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.version)
+            @Html.ValidationMessageFor(model => model.version)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.revision)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.revision)
+            @Html.ValidationMessageFor(model => model.revision)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.toolID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.toolID)
+            @Html.ValidationMessageFor(model => model.toolID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SCL, "SCL")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SCL", String.Empty)
+            @Html.ValidationMessageFor(model => model.SCL)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    <a href="@Html.Raw((String)(ViewBag.BackURL))">Back to Upper Element</a>
+</div>

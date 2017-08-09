@@ -1,0 +1,94 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_OptFields>
+
+@{
+    ViewBag.Title = "OptFields";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>OptFields</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            bufOvfl
+        </th>
+        <th>
+            configRef
+        </th>
+        <th>
+            dataRef
+        </th>
+        <th>
+            dataSet
+        </th>
+        <th>
+            entryID
+        </th>
+        <th>
+            reasonCode
+        </th>
+        <th>
+            segmentation
+        </th>
+        <th>
+            seqNum
+        </th>
+        <th>
+            timeStamp
+        </th>
+        <th>
+            ReportControl
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.bufOvfl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.configRef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataRef)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataSet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.reasonCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.segmentation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.seqNum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.timeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tReportControl.desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

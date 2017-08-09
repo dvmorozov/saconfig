@@ -1,0 +1,27 @@
+﻿@model SAConfig.Models.saconfig_tEnumVal
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>EnumVal Attributes</legend>
+
+    <div class="display-label">ord</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ord)
+    </div>
+
+    <div class="display-label">EnumType</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tEnumType.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

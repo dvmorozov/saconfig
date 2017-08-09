@@ -1,0 +1,22 @@
+﻿@model SAConfig.Models.saconfig_History
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>History Attributes</legend>
+
+    <div class="display-label">Header</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tHeader.ident)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

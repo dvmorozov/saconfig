@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SAConfig.Models.saconfig_tCert>
+
+@{
+    ViewBag.Title = "Cert";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cert</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            idHierarchy
+        </th>
+        <th>
+            commonName
+        </th>
+        <th>
+            Certificate
+        </th>
+        <th>
+            Element Name
+        </th>
+        <th>
+            DataOwnerID
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idHierarchy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.commonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_tCertificate.serialNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saconfig_CertElementName.ElementName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataOwnerID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

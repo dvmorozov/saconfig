@@ -1,0 +1,62 @@
+﻿@model SAConfig.Models.saconfig_tFCDA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FCDA Attributes</legend>
+
+    <div class="display-label">ldInst</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ldInst)
+    </div>
+
+    <div class="display-label">prefix</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.prefix)
+    </div>
+
+    <div class="display-label">lnClass</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lnClass)
+    </div>
+
+    <div class="display-label">lnInst</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.lnInst)
+    </div>
+
+    <div class="display-label">doName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.doName)
+    </div>
+
+    <div class="display-label">daName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.daName)
+    </div>
+
+    <div class="display-label">fc</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tFCEnum.value)
+    </div>
+
+    <div class="display-label">ix</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ix)
+    </div>
+
+    <div class="display-label">DataSet</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.saconfig_tDataSet.desc)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
